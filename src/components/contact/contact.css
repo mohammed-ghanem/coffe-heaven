@@ -1,0 +1,20 @@
+.Contact_c svg {
+  font-size: 3rem;
+  border-radius: 50%;
+  padding: 13px;
+  line-height: 1.5;
+  background: var(--main-color);
+  color: var(--white);
+  width: 48px !important;
+}
+.bookTable {
+  padding: 1rem;
+  border: 3px solid var(--main-color);
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px var(--main-color);
+}
+label {
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+  font-family: var(--main-font);
+}

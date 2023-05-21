@@ -1,0 +1,41 @@
+#header .bg-img {
+  min-height: calc(100vh - 80px);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+}
+#header .overlay {
+  background: linear-gradient(90deg, #fff, transparent 65%) no-repeat;
+}
+#header .welcome-text {
+  z-index: 2;
+}
+#header .welcome-text-content {
+  display: block;
+  width: 30rem;
+  text-align: center;
+  margin: 0;
+}
+#header .welcome-text h1 {
+  font-family: var(--title-font);
+  font-size: 4rem;
+  color: var(--font-black);
+}
+#header .welcome-text p {
+  font-family: var(--main-font);
+}
+
+/* media screen*/
+
+@media (max-width: 992px) {
+  #header .welcome-text-content {
+    width: auto;
+  }
+  #header .welcome-text h1 {
+    font-size: 3rem;
+  }
+  #header .overlay {
+    background: linear-gradient(150deg, #fff, transparent 100%) no-repeat;
+  }
+}

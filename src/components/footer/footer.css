@@ -1,0 +1,10 @@
+.footer_links {
+  color: var(--main-color);
+  font-family: var(--title-font);
+}
+.scrollBTN {
+  bottom: 15px;
+  right: 20px;
+  font-size: 25px;
+  padding: 3px 10px;
+}
