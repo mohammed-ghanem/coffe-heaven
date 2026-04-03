@@ -1,24 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./footer.css";
-import { useEffect, useState } from "react";
 
 const Footer = () => {
-  const [ScrollToTop, setScrollToTop] = useState(false);
+  const [scrollToTop, setScrollToTop] = useState(false);
 
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      // if (window.scrollY > 500) {
-      //   setScrollToTop(!ScrollToTop);
-      // } else {
-      //   setScrollToTop(ScrollToTop);
-      // }
-      window.scrollY > 500
-        ? setScrollToTop(!ScrollToTop)
-        : setScrollToTop(ScrollToTop);
-    });
-  }, []);
+    const handleScroll = () => {
+      if (window.scrollY > 500) {
+        setScrollToTop(true);
+      } else {
+        setScrollToTop(false);
+      }
+    };
 
-  const ScrollUp = () => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []); // مفيش dependencies هنا
+
+  const scrollUp = () => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
@@ -29,7 +31,7 @@ const Footer = () => {
     <section className="container">
       <div className="copyRight m-auto row">
         <div className="col-md-6 text-center fw-bold">
-          Copyright © 2022 <span className="footer_links">Coffee Heaven</span>
+          Copyright © 2022-2026 <span className="footer_links">Coffee Heaven</span>
         </div>
         <div className="col-md-6 text-center fw-bold ">
           <span>Developed by </span>
@@ -39,20 +41,14 @@ const Footer = () => {
           >
             Mohammed Ghanem
           </a>
-          <span> & </span>
-          <a
-            className="text-decoration-none footer_links"
-            href="https://www.linkedin.com/in/heba-hassan-mostafa/"
-          >
-            Heba Hassan
-          </a>
         </div>
       </div>
       <hr />
-      {ScrollToTop && (
+
+      {scrollToTop && (
         <button
           className="scrollBTN main-btn position-fixed border-0"
-          onClick={ScrollUp}
+          onClick={scrollUp}
         >
           <i className="fas fa-chevron-circle-up"></i>
         </button>
