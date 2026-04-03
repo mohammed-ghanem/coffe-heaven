@@ -18,7 +18,7 @@ const Footer = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []); // مفيش dependencies هنا
+  }, []);
 
   const scrollUp = () => {
     window.scrollTo({
